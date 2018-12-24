@@ -14,39 +14,39 @@ export default class InputToolbar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.keyboardWillShow = this.keyboardWillShow.bind(this);
-    this.keyboardWillHide = this.keyboardWillHide.bind(this);
+    // this.keyboardWillShow = this.keyboardWillShow.bind(this);
+    // this.keyboardWillHide = this.keyboardWillHide.bind(this);
 
     this.state = {
       position: 'absolute',
     };
   }
 
-  componentWillMount() {
-    this.keyboardWillShowListener = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
-    this.keyboardWillHideListener = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
-  }
+  // componentWillMount() {
+  //   this.keyboardWillShowListener = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
+  //   this.keyboardWillHideListener = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
+  // }
 
-  componentWillUnmount() {
-    this.keyboardWillShowListener.remove();
-    this.keyboardWillHideListener.remove();
-  }
+  // componentWillUnmount() {
+  //   this.keyboardWillShowListener.remove();
+  //   this.keyboardWillHideListener.remove();
+  // }
 
-  keyboardWillShow() {
-    if (this.state.position !== 'relative') {
-      this.setState({
-        position: 'relative',
-      });
-    }
-  }
+  // keyboardWillShow() {
+  //   if (this.state.position !== 'relative') {
+  //     this.setState({
+  //       position: 'relative',
+  //     });
+  //   }
+  // }
 
-  keyboardWillHide() {
-    if (this.state.position !== 'absolute') {
-      this.setState({
-        position: 'absolute',
-      });
-    }
-  }
+  // keyboardWillHide() {
+  //   if (this.state.position !== 'absolute') {
+  //     this.setState({
+  //       position: 'absolute',
+  //     });
+  //   }
+  // }
 
   renderActions() {
     if (this.props.renderActions) {
