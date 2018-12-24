@@ -60,10 +60,10 @@ class GiftedChat extends React.Component {
       typingDisabled: false,
     };
 
-    this.onKeyboardWillShow = this.onKeyboardWillShow.bind(this);
-    this.onKeyboardWillHide = this.onKeyboardWillHide.bind(this);
-    this.onKeyboardDidShow = this.onKeyboardDidShow.bind(this);
-    this.onKeyboardDidHide = this.onKeyboardDidHide.bind(this);
+    // this.onKeyboardWillShow = this.onKeyboardWillShow.bind(this);
+    // this.onKeyboardWillHide = this.onKeyboardWillHide.bind(this);
+    // this.onKeyboardDidShow = this.onKeyboardDidShow.bind(this);
+    // this.onKeyboardDidHide = this.onKeyboardDidHide.bind(this);
     this.onSend = this.onSend.bind(this);
     this.getLocale = this.getLocale.bind(this);
     this.onInputSizeChanged = this.onInputSizeChanged.bind(this);
@@ -74,10 +74,10 @@ class GiftedChat extends React.Component {
     this.invertibleScrollViewProps = {
       inverted: this.props.inverted,
       keyboardShouldPersistTaps: this.props.keyboardShouldPersistTaps,
-      onKeyboardWillShow: this.onKeyboardWillShow,
-      onKeyboardWillHide: this.onKeyboardWillHide,
-      onKeyboardDidShow: this.onKeyboardDidShow,
-      onKeyboardDidHide: this.onKeyboardDidHide,
+      // onKeyboardWillShow: this.onKeyboardWillShow,
+      // onKeyboardWillHide: this.onKeyboardWillHide,
+      // onKeyboardDidShow: this.onKeyboardDidShow,
+      // onKeyboardDidHide: this.onKeyboardDidHide,
     };
   }
 
@@ -166,18 +166,19 @@ class GiftedChat extends React.Component {
     return this._maxHeight;
   }
 
-  setKeyboardHeight(height) {
-    this._keyboardHeight = height;
-  }
+  // setKeyboardHeight(height) {
+  //   this._keyboardHeight = height;
+  // }
 
   getKeyboardHeight() {
-    if (Platform.OS === 'android' && !this.props.forceGetKeyboardHeight) {
-      // For android: on-screen keyboard resized main container and has own height.
-      // @see https://developer.android.com/training/keyboard-input/visibility.html
-      // So for calculate the messages container height ignore keyboard height.
-      return 0;
-    }
-    return this._keyboardHeight;
+    return 0;
+    // if (Platform.OS === 'android' && !this.props.forceGetKeyboardHeight) {
+    //   // For android: on-screen keyboard resized main container and has own height.
+    //   // @see https://developer.android.com/training/keyboard-input/visibility.html
+    //   // So for calculate the messages container height ignore keyboard height.
+    //   return 0;
+    // }
+    // return this._keyboardHeight;
   }
 
 
@@ -246,7 +247,7 @@ class GiftedChat extends React.Component {
     return value;
   }
 
-  onKeyboardWillShow(e) {
+  // onKeyboardWillShow(e) {
     // this.setIsTypingDisabled(true);
     // this.setKeyboardHeight(e.endCoordinates ? e.endCoordinates.height : e.end.height);
     // this.setBottomOffset(this.props.bottomOffset);
@@ -261,9 +262,9 @@ class GiftedChat extends React.Component {
     //     messagesContainerHeight: newMessagesContainerHeight,
     //   });
     // }
-  }
+  // }
 
-  onKeyboardWillHide() {
+  // onKeyboardWillHide() {
     // this.setIsTypingDisabled(true);
     // this.setKeyboardHeight(0);
     // this.setBottomOffset(0);
@@ -278,21 +279,21 @@ class GiftedChat extends React.Component {
     //     messagesContainerHeight: newMessagesContainerHeight,
     //   });
     // }
-  }
+  // }
 
-  onKeyboardDidShow(e) {
+  // onKeyboardDidShow(e) {
     // if (Platform.OS === 'android') {
     //   this.onKeyboardWillShow(e);
     // }
     // this.setIsTypingDisabled(false);
-  }
+  // }
 
-  onKeyboardDidHide(e) {
+  // onKeyboardDidHide(e) {
     // if (Platform.OS === 'android') {
     //   this.onKeyboardWillHide(e);
     // }
     // this.setIsTypingDisabled(false);
-  }
+  // }
 
   scrollToBottom(animated = true) {
     if (this._messageContainerRef === null) {
