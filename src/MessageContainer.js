@@ -10,7 +10,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, Platform } from 'react-native';
 
 import LoadEarlier from './LoadEarlier';
 import Message from './Message';
@@ -82,6 +82,40 @@ export default class MessageContainer extends React.PureComponent {
       this.flatListRef.scrollToOffset(options);
     }
   }
+
+  componentDidMount() {
+    if (Platform.OS === 'web') {
+      this._scrollNode = this.flatListRef.getScrollableNode();
+      this._scrollNode.addEventListener("wheel", this._invertedWheelEvent);
+  
+      // enable hardware acceleration
+      // makes scrolling fast in safari and firefox
+      // https://stackoverflow.com/a/24157294
+      this.flatListRef.setNativeProps({
+        style: {
+          transform: "translate3d(0,0,0) scaleY(-1)"
+        }
+      });
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._scrollNode) {
+      this._scrollNode.removeEventListener("wheel", this._invertedWheelEvent);
+    }
+  }
+
+  _invertedWheelEvent = e => {
+    this._scrollNode.scrollTop -= e.deltaY;
+    // console.log(
+    //   "scroll info",
+    //   e.deltaMode,
+    //   e.deltaY,
+    //   e.wheelDeltaY,
+    //   this._scrollNode.scrollTop
+    // );
+    e.preventDefault();
+  };
 
   renderRow({ item, index }) {
     if (!item._id && item._id !== 0) {
