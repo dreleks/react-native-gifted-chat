@@ -9,7 +9,6 @@ import {
   Text,
   TouchableOpacity,
   View,
-  ViewPropTypes,
 } from 'react-native';
 import Color from './Color';
 
@@ -93,14 +92,4 @@ LoadEarlier.defaultProps = {
   wrapperStyle: {},
   textStyle: {},
   activityIndicatorStyle: {},
-};
-
-LoadEarlier.propTypes = {
-  onLoadEarlier: PropTypes.func,
-  isLoadingEarlier: PropTypes.bool,
-  label: PropTypes.string,
-  containerStyle: ViewPropTypes.style,
-  wrapperStyle: ViewPropTypes.style,
-  textStyle: Text.propTypes.style,
-  activityIndicatorStyle: ViewPropTypes.style,
 };
