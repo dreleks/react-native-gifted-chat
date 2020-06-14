@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import GiftedAvatar from './GiftedAvatar';
 import { isSameUser, isSameDay } from './utils';
 
@@ -107,23 +107,4 @@ Avatar.defaultProps = {
   containerStyle: {},
   imageStyle: {},
   onPressAvatar: () => {},
-};
-
-Avatar.propTypes = {
-  renderAvatarOnTop: PropTypes.bool,
-  showAvatarForEveryMessage: PropTypes.bool,
-  position: PropTypes.oneOf(['left', 'right']),
-  currentMessage: PropTypes.object,
-  previousMessage: PropTypes.object,
-  nextMessage: PropTypes.object,
-  onPressAvatar: PropTypes.func,
-  renderAvatar: PropTypes.func,
-  containerStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-  imageStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
 };
