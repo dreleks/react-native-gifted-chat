@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Color from './Color';
 
 export default class Actions extends React.Component {
@@ -91,13 +91,3 @@ Actions.defaultProps = {
   wrapperStyle: {},
 };
 
-Actions.propTypes = {
-  onSend: PropTypes.func,
-  options: PropTypes.object,
-  optionTintColor: PropTypes.string,
-  icon: PropTypes.func,
-  onPressActionButton: PropTypes.func,
-  wrapperStyle: ViewPropTypes.style,
-  containerStyle: ViewPropTypes.style,
-  iconTextStyle: Text.propTypes.style,
-};
