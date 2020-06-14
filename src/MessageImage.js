@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Image, StyleSheet, View, ViewPropTypes } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import Lightbox from 'react-native-lightbox';
 
 export default function MessageImage({
@@ -53,12 +53,4 @@ MessageImage.defaultProps = {
   imageStyle: {},
   imageProps: {},
   lightboxProps: {},
-};
-
-MessageImage.propTypes = {
-  currentMessage: PropTypes.object,
-  containerStyle: ViewPropTypes.style,
-  imageStyle: Image.propTypes.style,
-  imageProps: PropTypes.object,
-  lightboxProps: PropTypes.object,
 };
