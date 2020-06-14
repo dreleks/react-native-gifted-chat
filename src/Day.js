@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import moment from 'moment';
 
 import Color from './Color';
@@ -61,15 +61,4 @@ Day.defaultProps = {
   wrapperStyle: {},
   textStyle: {},
   dateFormat: DATE_FORMAT,
-};
-
-Day.propTypes = {
-  currentMessage: PropTypes.object,
-  previousMessage: PropTypes.object,
-  nextMessage: PropTypes.object,
-  inverted: PropTypes.bool,
-  containerStyle: ViewPropTypes.style,
-  wrapperStyle: ViewPropTypes.style,
-  textStyle: Text.propTypes.style,
-  dateFormat: PropTypes.string,
 };
