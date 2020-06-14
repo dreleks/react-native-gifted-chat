@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import Composer from './Composer';
 import Send from './Send';
@@ -123,15 +123,4 @@ InputToolbar.defaultProps = {
   primaryStyle: {},
   accessoryStyle: {},
   onPressActionButton: () => {},
-};
-
-InputToolbar.propTypes = {
-  renderAccessory: PropTypes.func,
-  renderActions: PropTypes.func,
-  renderSend: PropTypes.func,
-  renderComposer: PropTypes.func,
-  onPressActionButton: PropTypes.func,
-  containerStyle: ViewPropTypes.style,
-  primaryStyle: ViewPropTypes.style,
-  accessoryStyle: ViewPropTypes.style,
 };
