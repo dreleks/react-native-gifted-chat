@@ -1,7 +1,7 @@
 /* eslint no-use-before-define: ["error", { "variables": false }] */
 
 import React from 'react';
-import { StyleSheet, Text, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Color from './Color';
 
@@ -38,11 +38,4 @@ SystemMessage.defaultProps = {
   containerStyle: {},
   wrapperStyle: {},
   textStyle: {},
-};
-
-SystemMessage.propTypes = {
-  currentMessage: PropTypes.object,
-  containerStyle: ViewPropTypes.style,
-  wrapperStyle: ViewPropTypes.style,
-  textStyle: Text.propTypes.style,
 };
