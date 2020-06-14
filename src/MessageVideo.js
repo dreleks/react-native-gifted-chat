@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Video from 'react-native-video';
 
 
@@ -46,11 +46,4 @@ MessageVideo.defaultProps = {
     resizeMode: 'cover',
   },
   videoProps: {},
-};
-
-MessageVideo.propTypes = {
-  currentMessage: PropTypes.object,
-  containerStyle: ViewPropTypes.style,
-  videoStyle: ViewPropTypes.style,
-  videoProps: PropTypes.object,
 };
