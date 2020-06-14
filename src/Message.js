@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { View, ViewPropTypes, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 import Avatar from './Avatar';
 import Bubble from './Bubble';
@@ -124,20 +124,3 @@ Message.defaultProps = {
   inverted: true,
 };
 
-Message.propTypes = {
-  renderAvatar: PropTypes.func,
-  showUserAvatar: PropTypes.bool,
-  renderBubble: PropTypes.func,
-  renderDay: PropTypes.func,
-  renderSystemMessage: PropTypes.func,
-  position: PropTypes.oneOf(['left', 'right']),
-  currentMessage: PropTypes.object,
-  nextMessage: PropTypes.object,
-  previousMessage: PropTypes.object,
-  user: PropTypes.object,
-  inverted: PropTypes.bool,
-  containerStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-};
