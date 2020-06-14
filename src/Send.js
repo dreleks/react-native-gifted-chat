@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Color from './Color';
 
 export default function Send({ text, containerStyle, onSend, children, textStyle, label, alwaysShowSend }) {
@@ -49,14 +49,4 @@ Send.defaultProps = {
   textStyle: {},
   children: null,
   alwaysShowSend: false,
-};
-
-Send.propTypes = {
-  text: PropTypes.string,
-  onSend: PropTypes.func,
-  label: PropTypes.string,
-  containerStyle: ViewPropTypes.style,
-  textStyle: Text.propTypes.style,
-  children: PropTypes.element,
-  alwaysShowSend: PropTypes.bool,
 };
