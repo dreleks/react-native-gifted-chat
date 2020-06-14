@@ -2,7 +2,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Text, Clipboard, StyleSheet, TouchableWithoutFeedback, View, ViewPropTypes } from 'react-native';
+import { Text, Clipboard, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 
 import MessageText from './MessageText';
 import MessageImage from './MessageImage';
@@ -286,44 +286,4 @@ Bubble.defaultProps = {
   usernameStyle: {},
   containerToNextStyle: {},
   containerToPreviousStyle: {},
-};
-
-Bubble.propTypes = {
-  user: PropTypes.object.isRequired,
-  touchableProps: PropTypes.object,
-  onLongPress: PropTypes.func,
-  renderMessageImage: PropTypes.func,
-  renderMessageVideo: PropTypes.func,
-  renderMessageText: PropTypes.func,
-  renderCustomView: PropTypes.func,
-  renderUsernameOnMessage: PropTypes.bool,
-  renderUsername: PropTypes.func,
-  renderTime: PropTypes.func,
-  renderTicks: PropTypes.func,
-  position: PropTypes.oneOf(['left', 'right']),
-  currentMessage: PropTypes.object,
-  nextMessage: PropTypes.object,
-  previousMessage: PropTypes.object,
-  containerStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-  wrapperStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-  bottomContainerStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-  tickStyle: Text.propTypes.style,
-  usernameStyle: Text.propTypes.style,
-  containerToNextStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
-  containerToPreviousStyle: PropTypes.shape({
-    left: ViewPropTypes.style,
-    right: ViewPropTypes.style,
-  }),
 };
