@@ -134,10 +134,3 @@ GiftedAvatar.defaultProps = {
   avatarStyle: {},
   textStyle: {},
 };
-
-GiftedAvatar.propTypes = {
-  user: PropTypes.object,
-  onPress: PropTypes.func,
-  avatarStyle: Image.propTypes.style,
-  textStyle: Text.propTypes.style,
-};
