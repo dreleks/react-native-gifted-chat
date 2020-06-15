@@ -204,15 +204,3 @@ MessageContainer.defaultProps = {
   invertibleScrollViewProps: {}, // TODO: support or not?
 };
 
-MessageContainer.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.object),
-  user: PropTypes.object,
-  renderFooter: PropTypes.func,
-  renderMessage: PropTypes.func,
-  renderLoadEarlier: PropTypes.func,
-  onLoadEarlier: PropTypes.func,
-  listViewProps: PropTypes.object,
-  inverted: PropTypes.bool,
-  loadEarlier: PropTypes.bool,
-  invertibleScrollViewProps: PropTypes.object, // TODO: support or not?
-};
