@@ -84,17 +84,3 @@ Composer.defaultProps = {
   onTextChanged: () => {},
   onInputSizeChanged: () => {},
 };
-
-Composer.propTypes = {
-  composerHeight: PropTypes.number,
-  text: PropTypes.string,
-  placeholder: PropTypes.string,
-  placeholderTextColor: PropTypes.string,
-  textInputProps: PropTypes.object,
-  onTextChanged: PropTypes.func,
-  onInputSizeChanged: PropTypes.func,
-  multiline: PropTypes.bool,
-  textInputStyle: TextInput.propTypes.style,
-  textInputAutoFocus: PropTypes.bool,
-  keyboardAppearance: PropTypes.string,
-};
