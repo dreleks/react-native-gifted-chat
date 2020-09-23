@@ -15,12 +15,13 @@ export default function Day(
   context,
 ) {
   if (!isSameDay(currentMessage, inverted ? previousMessage : nextMessage)) {
+    const locale = context.getLocale? context.getLocale() : 'uk';
     return (
       <View style={[styles.container, containerStyle]}>
         <View style={wrapperStyle}>
           <Text style={[styles.text, textStyle]}>
             {moment(currentMessage.createdAt)
-              .locale(context.getLocale())
+              .locale(locale)
               .format(dateFormat)
               .toUpperCase()}
           </Text>
