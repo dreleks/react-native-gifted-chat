@@ -13,11 +13,12 @@ export default function Time(
   { position, containerStyle, currentMessage, timeFormat, textStyle, timeTextStyle },
   context,
 ) {
+  const locale = context.getLocale? context.getLocale() : 'uk';
   return (
     <View style={[styles[position].container, containerStyle[position]]}>
       <Text style={[styles[position].text, textStyle[position], timeTextStyle[position]]}>
         {moment(currentMessage.createdAt)
-          .locale(context.getLocale())
+          .locale(locale)
           .format(timeFormat)}
       </Text>
     </View>
