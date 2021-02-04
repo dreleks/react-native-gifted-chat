@@ -18,7 +18,6 @@ export default function Time(
     <View style={[styles[position].container, containerStyle[position]]}>
       <Text style={[styles[position].text, textStyle[position], timeTextStyle[position]]}>
         {moment(currentMessage.createdAt)
-          .locale(locale)
           .format(timeFormat)}
       </Text>
     </View>
