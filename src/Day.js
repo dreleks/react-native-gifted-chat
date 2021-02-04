@@ -29,6 +29,20 @@ export default function Day(
   return null;
 }
 
+
+Day.defaultProps = {
+  currentMessage: {
+    // TODO: test if crash when createdAt === null
+    createdAt: null,
+  },
+  previousMessage: {},
+  nextMessage: {},
+  containerStyle: {},
+  wrapperStyle: {},
+  textStyle: {},
+  dateFormat: DATE_FORMAT,
+};
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
