@@ -21,6 +21,19 @@ export default function Time(
   );
 }
 
+
+Time.defaultProps = {
+  position: 'left',
+  currentMessage: {
+    createdAt: null,
+  },
+  containerStyle: {},
+  textStyle: {},
+  timeFormat: TIME_FORMAT,
+  timeTextStyle: {},
+};
+
+
 const containerStyle = {
   marginLeft: 10,
   marginRight: 10,
