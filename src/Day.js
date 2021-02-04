@@ -11,17 +11,14 @@ import { isSameDay } from './utils';
 import { DATE_FORMAT } from './Constant';
 
 export default function Day(
-  { dateFormat, currentMessage, previousMessage, nextMessage, containerStyle, wrapperStyle, textStyle, inverted },
-  context,
+  { dateFormat, currentMessage, previousMessage, nextMessage, containerStyle, wrapperStyle, textStyle, inverted }
 ) {
   if (!isSameDay(currentMessage, inverted ? previousMessage : nextMessage)) {
-    const locale = context.getLocale? context.getLocale() : 'uk';
     return (
       <View style={[styles.container, containerStyle]}>
         <View style={wrapperStyle}>
           <Text style={[styles.text, textStyle]}>
             {moment(currentMessage.createdAt)
-              .locale(locale)
               .format(dateFormat)
               .toUpperCase()}
           </Text>
@@ -47,19 +44,3 @@ const styles = StyleSheet.create({
   },
 });
 
-Day.contextTypes = {
-  getLocale: PropTypes.func,
-};
-
-Day.defaultProps = {
-  currentMessage: {
-    // TODO: test if crash when createdAt === null
-    createdAt: null,
-  },
-  previousMessage: {},
-  nextMessage: {},
-  containerStyle: {},
-  wrapperStyle: {},
-  textStyle: {},
-  dateFormat: DATE_FORMAT,
-};
