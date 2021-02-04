@@ -1,6 +1,5 @@
 /* eslint no-use-before-define: ["error", { "variables": false }] */
 
-import PropTypes from 'prop-types';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -10,10 +9,8 @@ import Color from './Color';
 import { TIME_FORMAT } from './Constant';
 
 export default function Time(
-  { position, containerStyle, currentMessage, timeFormat, textStyle, timeTextStyle },
-  context,
+  { position, containerStyle, currentMessage, timeFormat, textStyle, timeTextStyle }
 ) {
-  const locale = context.getLocale? context.getLocale() : 'uk';
   return (
     <View style={[styles[position].container, containerStyle[position]]}>
       <Text style={[styles[position].text, textStyle[position], timeTextStyle[position]]}>
@@ -55,19 +52,4 @@ const styles = {
       ...textStyle,
     },
   }),
-};
-
-Time.contextTypes = {
-  getLocale: PropTypes.func,
-};
-
-Time.defaultProps = {
-  position: 'left',
-  currentMessage: {
-    createdAt: null,
-  },
-  containerStyle: {},
-  textStyle: {},
-  timeFormat: TIME_FORMAT,
-  timeTextStyle: {},
 };
