@@ -94,13 +94,6 @@ class GiftedChat extends React.Component {
     return inverted ? currentMessages.concat(messages) : messages.concat(currentMessages);
   }
 
-  getChildContext() {
-    return {
-      actionSheet: () => this._actionSheetRef,
-      getLocale: this.getLocale,
-    };
-  }
-
   componentWillMount() {
     const { messages, text } = this.props;
     this.setIsMounted(true);
