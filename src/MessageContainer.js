@@ -91,11 +91,12 @@ export default class MessageContainer extends React.PureComponent {
       // enable hardware acceleration
       // makes scrolling fast in safari and firefox
       // https://stackoverflow.com/a/24157294
-      this.flatListRef.setNativeProps({
-        style: {
-          transform: "translate3d(0,0,0) scaleY(-1)"
-        }
-      });
+      // update: setNativeProps crashes after expo 50 update
+      // this.flatListRef.setNativeProps({
+      //   style: {
+      //     transform: "translate3d(0,0,0) scaleY(-1)"
+      //   }
+      // });
     }
   }
 
